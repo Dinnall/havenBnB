@@ -11,7 +11,7 @@ var GuestLogin = React.createClass({
 	submitLogin(){
 
 	  //push to home
-		browserHistory.push('/home')
+		browserHistory.push('/show-all')
 		
 		
 	},
