@@ -6,6 +6,7 @@ import Home from './Home'
 import Navbar from './Nav';
 import HostVolunteerLogin from './HostVolunteerLogin';
 import GuestLogin from './GuestLogin';
+import AllListings from './ShowAll';
 
 
 const App = (props) => {
@@ -24,6 +25,7 @@ ReactDOM.render(
 			<Route path="/home" component={Home} />
 			<Route path="/volunteer-login" component={HostVolunteerLogin} />
 			<Route path="/guest-login" component={GuestLogin} />
+			<Route path="/show-all" component={AllListings} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
