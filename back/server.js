@@ -28,7 +28,7 @@ app.get('/*', function(req, res) {
 });
 
 //connect database to server
-db.sequelizeConnection.sync().then(function() {
+db.sequelize.sync().then(function() {
 	console.log("Listening on port 3000");
   app.listen(3000);
 });

@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "root",
+    "username": "michaeldinnall",
     "password": null,
-    "database": "database_development",
+    "database": "haven",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "root",
+    "username": "michaeldinnall",
     "password": null,
-    "database": "database_test",
+    "database": "haven",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
+    "username": "michaeldinnall",
     "password": null,
-    "database": "database_production",
+    "database": "haven",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
