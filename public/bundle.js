@@ -72,6 +72,10 @@
 	
 	var _GuestLogin2 = _interopRequireDefault(_GuestLogin);
 	
+	var _ShowAll = __webpack_require__(238);
+	
+	var _ShowAll2 = _interopRequireDefault(_ShowAll);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var App = function App(props) {
@@ -92,7 +96,8 @@
 			_react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/volunteer-login', component: _HostVolunteerLogin2.default }),
-			_react2.default.createElement(_reactRouter.Route, { path: '/guest-login', component: _GuestLogin2.default })
+			_react2.default.createElement(_reactRouter.Route, { path: '/guest-login', component: _GuestLogin2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/show-all', component: _ShowAll2.default })
 		)
 	), document.getElementById('root'));
 
@@ -37077,7 +37082,7 @@
 		submitLogin: function submitLogin() {
 	
 			//push to home
-			_reactRouter.browserHistory.push('/home');
+			_reactRouter.browserHistory.push('/show-all');
 		},
 		render: function render() {
 			return _react2.default.createElement(
@@ -37201,6 +37206,96 @@
 	// // export default connect(null, userActions)(Login); //connects: mapStoreToProps is global state in the props
 	
 	// export default GuestLogin;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _jquery = __webpack_require__(234);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _reactRouter = __webpack_require__(178);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var AllListings = _react2.default.createClass({
+		displayName: 'AllListings',
+		getInitialState: function getInitialState() {
+			return { places: [] };
+		},
+		componentDidMount: function componentDidMount() {
+			var _this = this;
+	
+			{
+				_jquery2.default.ajax({
+					url: '/api/listing',
+					type: "GET"
+				}).done(function (data) {
+					_this.setState({ places: data });
+				});
+			}
+		},
+	
+		render: function render() {
+			console.log("CURRENT LISTINGS", this.props);
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h2',
+					null,
+					'All Available Listings'
+				),
+				this.state.places.length === 0 ? "Loading..." : this.state.places.map(function (place, idx) {
+					return _react2.default.createElement(
+						_reactRouter.Link,
+						{ to: "/listing/" + place.id, key: idx },
+						_react2.default.createElement(
+							'div',
+							{ className: 'oneList' },
+							_react2.default.createElement('img', { className: 'gridImg', src: place.images[0] }),
+							_react2.default.createElement(
+								'p',
+								{ className: 'guestLimit' },
+								_react2.default.createElement(
+									'strong',
+									null,
+									place.guestLimit
+								),
+								'/per night'
+							),
+							_react2.default.createElement(
+								'p',
+								{ className: 'availabile' },
+								_react2.default.createElement(
+									'strong',
+									null,
+									place.availability
+								)
+							)
+						)
+					);
+				})
+			);
+		}
+	});
+	
+	exports.default = AllListings;
 
 /***/ }
 /******/ ]);
