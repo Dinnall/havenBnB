@@ -10,10 +10,10 @@ const App = (props) => {
 	)
 }
 
-ReactDOM.render({
+ReactDOM.render(
 	<Router history={browserHistory}>
 		<Route path='/' component={App}> 
 		</Route>
 	</Router>,
 	document.getElementById('root')
-})
+)
