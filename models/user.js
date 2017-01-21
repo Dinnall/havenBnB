@@ -15,14 +15,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       len: [5, 35]  
+    },
+    host: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
     }
   }, {
-    // classMethods: {
-    //   associate: function(models) {
-    //     User.hasOne(models.Listing);
-    //     User.hasMany(models.Booking);
-    //   }
-    // }
+    classMethods: {
+      associate: function(models) {
+        User.hasOne(models.Listing);
+      }
+    }
   });
   return User;
 };                                          
