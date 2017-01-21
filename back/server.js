@@ -20,7 +20,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use("/api", require('./routes'))
+app.use("/api", require('../routes'))
 
 
 app.get('/*', function(req, res) {
