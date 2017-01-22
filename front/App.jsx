@@ -8,6 +8,7 @@ import HostVolunteerLogin from './HostVolunteerLogin';
 import GuestLogin from './GuestLogin';
 import RoomDetails from './RoomDetails';
 import AllListings from './ShowAll';
+import './App.css'
 
 
 const App = (props) => {
