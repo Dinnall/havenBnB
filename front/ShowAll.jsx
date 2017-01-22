@@ -19,7 +19,7 @@ const AllListings = React.createClass({
 		}
 	},
 	render: function(){
-				console.log("CURRENT LISTINGS", this.props)
+				//console.log("CURRENT LISTINGS", this.props)
 			return(
 			<div>
 				<h2>All Available Listings</h2>
