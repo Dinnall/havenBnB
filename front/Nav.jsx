@@ -28,8 +28,8 @@ var Navbar = React.createClass({
     <div>
 
        { /*LOGO*/}
-      <nav className="navbar main">
-          <div className="logo col-xs-3">
+      <nav className="navMid">
+          <div className="navMid">
             <a href="/" className="logoWidth">
         <Link to='/'><img className='logo' src={require('./images/havenHOME.png')} /></Link>
 
@@ -39,8 +39,8 @@ var Navbar = React.createClass({
 
 
       { /*NAV TABS*/}
-      <nav className="navbar navbar-default">
-        <div className="container-fluid">
+      <nav className="navMid">
+        <div className="navlist">
 
           { /*Collect the nav links, forms, and other content for toggling */}
           <div className="collapse navbar-collapse">

@@ -1,3 +1,11 @@
+
+body{
+	background-color: #f2f1ed;
+	font-size: 25px 
+}
+
+
+
 .gridImg {
 	height: 250px;
 	width: 350px;
@@ -14,4 +22,45 @@
 	margin-left: 20px;
 	margin-bottom: 20px;
 	margin-top: 20px;
+	font-family: 'Helvetica';
+	font-weight: bold
+}
+
+/*********Nav Bar *************/
+.nav navbar-nav{
+  display: flex;
+  justify-content:space-between;
+  border-bottom: 1px solid #efefef;
+  list-style: none;
+  align-items: center;
+  height: 80px;
+  margin: 0;
+  padding-left: 0;
+}
+
+.nav navbar-nav{
+  text-decoration: none;
+}
+
+.nav navbar-nav{
+    color: #262626;
+    margin-left: 200px;
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+}
+
+.nav navbar-nav{
+    color: grey;
+    /*margin-right: 200px;*/
+}
+
+.nav navbar-nav{
+    color: grey;
+}
+
+.navlist {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  margin-right: 200px;
 }
