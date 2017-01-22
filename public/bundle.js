@@ -72,7 +72,11 @@
 	
 	var _GuestLogin2 = _interopRequireDefault(_GuestLogin);
 	
-	var _ShowAll = __webpack_require__(238);
+	var _RoomDetails = __webpack_require__(238);
+	
+	var _RoomDetails2 = _interopRequireDefault(_RoomDetails);
+	
+	var _ShowAll = __webpack_require__(239);
 	
 	var _ShowAll2 = _interopRequireDefault(_ShowAll);
 	
@@ -97,6 +101,7 @@
 			_react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/volunteer-login', component: _HostVolunteerLogin2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/guest-login', component: _GuestLogin2.default }),
+			_react2.default.createElement(_reactRouter.Route, { path: '/room/:id', component: _RoomDetails2.default }),
 			_react2.default.createElement(_reactRouter.Route, { path: '/show-all', component: _ShowAll2.default })
 		)
 	), document.getElementById('root'));
@@ -37214,6 +37219,79 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _jquery = __webpack_require__(234);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var RoomDetails = _react2.default.createClass({
+	  displayName: 'RoomDetails',
+	  getInitialState: function getInitialState() {
+	    return {
+	      roomInfo: null,
+	      nearbyFood: null
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+	
+	    var id = this.props.params.id;
+	    _jquery2.default.ajax({
+	      url: '/api/listing/' + id
+	    }).done(function (data) {
+	      _this.setState({ roomInfo: data });
+	      console.log("Room info saved.");
+	    });
+	
+	    // var zipcode = 10001;
+	    // $.ajax({
+	    //   url:'https://c4q-dot-searchbertha-hrd.appspot.com/_ah/api/search/v1/zipcodes/'+zipcode+'/programs?api_key=b30f1b9f41161c0fb3b39cb49aff8104&serviceTag=food+pantry,free+meals&cursor=0&limit=25'
+	    // })
+	    // .done((data) => {
+	    //   var activeKitchens = data.programs.map((val) => {
+	    //     if(val.open_now_info.open_now === true){
+	    //       return val
+	    //     }
+	    //   })
+	    //   this.setState({nearbyFood: activeKitchens});
+	    // })
+	  },
+	  render: function render() {
+	    console.log("hello error");
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Room Details'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Food Info'
+	      )
+	    );
+	  }
+	});
+	
+	exports.default = RoomDetails;
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 	
@@ -37264,7 +37342,7 @@
 				this.state.places.length === 0 ? "Loading..." : this.state.places.map(function (place, idx) {
 					return _react2.default.createElement(
 						_reactRouter.Link,
-						{ to: "/listing/" + place.id, key: idx },
+						{ to: "/room/" + place.id, key: idx },
 						_react2.default.createElement(
 							'div',
 							{ className: 'oneList' },
