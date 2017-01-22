@@ -10,6 +10,8 @@ import RoomDetails from './RoomDetails';
 import AllListings from './ShowAll';
 import PostARoom from './PostARoom';
 import './App.css'
+var Carousel = require('nuka-carousel');
+
 
 
 const App = (props) => {
