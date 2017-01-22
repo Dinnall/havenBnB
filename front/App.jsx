@@ -9,6 +9,7 @@ import GuestLogin from './GuestLogin';
 import RoomDetails from './RoomDetails';
 import AllListings from './ShowAll';
 import PostARoom from './PostARoom';
+import './App.css'
 
 
 const App = (props) => {
