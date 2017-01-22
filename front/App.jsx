@@ -8,6 +8,7 @@ import HostVolunteerLogin from './HostVolunteerLogin';
 import GuestLogin from './GuestLogin';
 import RoomDetails from './RoomDetails';
 import AllListings from './ShowAll';
+import PostARoom from './PostARoom';
 
 
 const App = (props) => {
@@ -28,6 +29,7 @@ ReactDOM.render(
 			<Route path="/guest-login" component={GuestLogin} />
 			<Route path="/room/:id" component={RoomDetails} />
 			<Route path="/show-all" component={AllListings} />
+			<Route path="/create-post" component={PostARoom} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
