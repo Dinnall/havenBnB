@@ -31,7 +31,7 @@ var Navbar = React.createClass({
       <nav className="navbar main">
           <div className="logo col-xs-3">
             <a href="/" className="logoWidth">
-             <img src= "http://www.freeindex.co.uk/aspjpeg/showimage.asp?img=logo.jpg&folder=listingpics/692/506/&maxW=230&maxH=80" />
+        <Link to='/'><img className='logo' src={require('./images/havenHOME.png')} /></Link>
 
             </a>
           </div>
