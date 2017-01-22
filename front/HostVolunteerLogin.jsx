@@ -11,7 +11,7 @@ var HostVolunteerLogin = React.createClass({
 	submitLogin(){
 
 	  //push to home
-		browserHistory.push('/home')
+		browserHistory.push('/create-post')
 		
 		
 	},
