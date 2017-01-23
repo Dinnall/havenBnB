@@ -15,6 +15,15 @@ var Navbar = React.createClass({
    render: function() {
     return (
     <div>
+       <nav>
+        <div className="navlist">
+            <ul className="ulLink">
+             <li className="linetext"><Link to="/volunteer-login">Host Log-In</Link></li> 
+              <li className="linetext"><Link to="/guest-login">Guest Log-In</Link></li>
+            </ul>
+            </div>
+       </nav>
+        
          <nav>
         <Link to='/'><img className='logo' src={require('./images/havenBanner2.png')} /></Link>
           <div className="header-wrap">
@@ -24,21 +33,11 @@ var Navbar = React.createClass({
             </div>
           </div>
       </nav>
-      
-       <nav>
-        <div className="navlist">
-           <div className="">
-            <ul className="ulLink"> 
-              <li className="linetext"><Link to="/volunteer-login">Host Log-In</Link></li> 
-              <li className="linetext"><Link to="/guest-login">Guest Log-In</Link></li>
-            </ul>
-            </div>
-        </div>
-       </nav>
       </div>
     )
   }
 })
 
 export default Navbar;
+
 
