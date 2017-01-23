@@ -15,7 +15,7 @@ var HostVolunteerLogin = React.createClass({
 		    <div className="hostContainer">
 	        <div className="hostForm loginBox">
             <form>
-          		<h4>Host Login</h4>
+          		<div className='hostTitle'>Host Login</div>
 					    <input className="inputField" type="email" placeholder="Email"  required/>
               <br></br>
 					    <input className="inputField" type="password" placeholder="Password" required/>

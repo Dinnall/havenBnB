@@ -25,6 +25,14 @@ font-family: 'Noto Serif', serif;*/
   background-color: red;
 }*/
 
+.hostContainer {
+	margin-top: 50px;
+}
+
+.hostTitle {
+	font-family: 'Lobster', cursive;
+}
+
 .loginBox {
   border: 1px solid black;
   width: 300px;
@@ -32,6 +40,8 @@ font-family: 'Noto Serif', serif;*/
   text-align: center;
   vertical-align: middle;
   padding: 10px;
+  background-color: white;
+  color: #D66360;
 }
 
 .inputField{
