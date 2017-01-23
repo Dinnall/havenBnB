@@ -25,7 +25,7 @@ var Navbar = React.createClass({
        </nav>
         
          <nav>
-        <Link to='/'><img className='logo' src={require('./images/havenBanner2.png')} /></Link>
+        <Link to='/'><img className='logo' src={require('./images/haven3.png')} /></Link>
           <div className="header-wrap">
           <div className= "list-inline">
             <a href="/" className="logoWidth">
