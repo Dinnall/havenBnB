@@ -1,5 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
+import {withRouter} from 'react-router';
+import Popup from 'react-popup';
 
 const RoomDetails = React.createClass({
   getInitialState(){
@@ -12,6 +14,9 @@ const RoomDetails = React.createClass({
 
   //gwtting listing info
   componentDidMount(){
+    Popup.addCloseListener(() => this.props.router.push('/'))
+
+
     var id = this.props.params.id;
     $.ajax({
       url:'/api/listing/' + id
@@ -21,6 +26,25 @@ const RoomDetails = React.createClass({
       //console.log(data);
       this.findSoupKitchens();
     })
+  },
+  submitNewPost() {
+    var id = this.props.params.id;
+    $.ajax({
+      url:'/api/listing/'+ id,
+      type: 'PUT',
+      data: {
+        id: id,
+        description: this.state.description,
+        images: this.state.images,    
+        guestLimit: this.state.guestLimit,    
+        availability: this.state.availability,
+        UserId: 1
+
+      }
+
+    })
+
+    Popup.alert("Your Reservation Has Been Confirmed!!! If you require any further help contact us at help@havenbnb.com");
   },
 
   // saveZipCode(event){
@@ -66,8 +90,14 @@ const RoomDetails = React.createClass({
         <div>
           <img src={this.state.roomInfo[0].images[0]} />
           <p>What To Expect: {this.state.roomInfo[0].description}</p>
-          <p>Host: {this.state.roomInfo[0].User.firstName}</p>
+
           <p>Guests Per Night: {this.state.roomInfo[0].guestLimit}</p>
+          <button onClick={this.submitNewPost} type="button">Book Me!</button>
+
+           <div>
+           <Popup />
+
+           </div>
         </div>
 
         <div>
