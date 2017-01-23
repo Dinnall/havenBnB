@@ -8,7 +8,8 @@ import './All.css/findRoom.css'
 const PostARoom = React.createClass({
 	getInitialState(){
 		return {
-		  description: '',
+      description: '',
+		  zipCode: '',
 		  images: '',	  
 		  guestLimit: 1,	  
 		  availability: ''
@@ -28,7 +29,8 @@ const PostARoom = React.createClass({
 		  url:'/api/listing',
 		  type: 'POST',
 		  data: {
-		  	description: this.state.description,
+        description: this.state.description,
+		  	zipCode: this.state.zipCode,
 		  	images: this.state.images,	  
 		  	guestLimit: this.state.guestLimit,	  
 		  	availability: this.state.availability
@@ -50,15 +52,13 @@ const PostARoom = React.createClass({
 			  <h2 className="bassicInfo">BASIC INFORMATION</h2>
 	          <h3>DESCRIBE THE PLACE</h3>
 
-	          <textarea className="textarea1" onChange={this.handleChange.bind(this, 'description')} type="text" name="description" rows="5" class="form-control" name="description_room" id="description_room" placeholder="In a few words describe the room you're offering. Tell us about moving dates, desired arrangements, accommodations, environment, etc."></textarea>
+	          <textarea className="textarea1" onChange={this.handleChange.bind(this, 'description')} type="text" name="description" rows="5" className="form-control" name="description_room" id="description_room" placeholder="In a few words describe the room you're offering. Tell us about moving dates, desired arrangements, accommodations, environment, etc."></textarea>
 	          <br/><br/>
 	          
 
 			  <h3 className="guestLimit">Upload some pictures, posts with more than 2 photos get more exposure.</h3>
 	          <textarea className="textarea2" onChange={this.handleChange.bind(this, 'images')} type="text" name="images" placeholder="Add image url"></textarea>
 	          <br/><br/>
-
-
 	          <h3 className="guestLimit">Add Guest Limit:</h3>
 	          <select onChange={this.handleChange.bind(this, 'guestLimit')} name="guestLimit">
 				  <option value="1">One</option>

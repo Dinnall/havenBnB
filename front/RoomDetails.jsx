@@ -22,8 +22,9 @@ const RoomDetails = React.createClass({
       url:'/api/listing/' + id
     })
     .done((data) => {
-      this.setState({roomInfo: data})
+      this.setState({roomInfo: data});
       //console.log(data);
+      this.findSoupKitchens();
     })
   },
   submitNewPost() {
@@ -46,20 +47,20 @@ const RoomDetails = React.createClass({
     Popup.alert("Your Reservation Has Been Confirmed!!! If you require any further help contact us at help@havenbnb.com");
   },
 
-  saveZipCode(event){
-    this.setState({zipCode:event.target.value});
-  },
+  // saveZipCode(event){
+  //   this.setState({zipCode:event.target.value});
+  // },
 
   //api ajax call
-  findSoupKitchens(event){
-    event.preventDefault();
-    var zipcode = this.state.zipCode;
+  findSoupKitchens(){
+    var zipcode = this.state.roomInfo[0].zipCode;
     $.ajax({
       url:'https://c4q-dot-searchbertha-hrd.appspot.com/_ah/api/search/v1/zipcodes/'+zipcode+'/programs?api_key=b30f1b9f41161c0fb3b39cb49aff8104&serviceTag=food+pantry,free+meals&cursor=0&limit=40'
     }) //filtering open kitchens only
     .done((data) => {
       var activeKitchens = [];
       var kitchenDescription = [];
+
       data.programs.forEach((val) => {
         if(val.offices[0].open_now_info.open_now === true){
           activeKitchens.push(val);
@@ -68,8 +69,8 @@ const RoomDetails = React.createClass({
         //generating list of open kitchens
       if(activeKitchens.length !== 0){
         activeKitchens.forEach((val) => {
-          //console.log(val.offices[0]);
-          kitchenDescription.push(<li><h5>{val.name}</h5></li>, <li>Address: {val.offices[0].address1}</li>, <li>City: {val.offices[0].city}</li>, <li>Zip Code: {val.offices[0].postal}</li>, <li>Phone Number: {val.offices[0].phone_number}</li>)
+          //console.log(val);
+          kitchenDescription.push(<li><h5>{val.name}</h5></li>, <li>Address: {val.offices[0].address1}</li>, <li>City: {val.offices[0].city}</li>, <li>Zip Code: {val.offices[0].postal}</li>, <li>Phone Number: {val.offices[0].phone_number}</li>, <li>Website: <a href={val.website_url}>{val.website_url}</a></li>)
 
       this.setState({nearbyFood: kitchenDescription});
         })
@@ -100,11 +101,7 @@ const RoomDetails = React.createClass({
         </div>
 
         <div>
-          <form onChange={this.saveZipCode} onSubmit={this.findSoupKitchens}>
             Find places nearby serving meals: 
-            <input type='text' placeholder='Zip Code'></input>
-            <input type="submit" value="Search" />
-          </form>
             <ul>{this.state.nearbyFood}</ul>
         </div>
       </div>
@@ -117,3 +114,9 @@ const RoomDetails = React.createClass({
 })
 
 export default RoomDetails;
+
+
+          //<form onChange={this.saveZipCode} onSubmit={this.findSoupKitchens}>
+            // <input type='text' placeholder='Zip Code'></input>
+            // <input type="submit" value="Search" />
+          //</form>
