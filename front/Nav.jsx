@@ -18,15 +18,15 @@ var Navbar = React.createClass({
        <nav>
         <div className="navlist">
             <ul className="ulLink">
-             <li className="linetext"><Link to="/volunteer-login">Host Log-In</Link></li> 
-              <li className="linetext"><Link to="/guest-login">Guest Log-In</Link></li>
+             <li className="li1"><Link to="/volunteer-login">Host Log-In</Link></li> 
+              <li className="li2"><Link to="/guest-login">Guest Log-In</Link></li>
             </ul>
             </div>
        </nav>
         
          <nav>
         <Link to='/'><img className='logo' src={require('./images/haven3.png')} /></Link>
-          <div className="header-wrap">
+          <div>
           <div className= "list-inline">
             <a href="/" className="logoWidth">
             </a>

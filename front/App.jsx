@@ -16,7 +16,7 @@ import './Main.css';
 const App = (props) => {
 	return (
 		<div>
-			<Navbar />
+		<Navbar />
 			{props.children} 
 		</div>
 	)
