@@ -15,8 +15,8 @@ var Navbar = React.createClass({
    render: function() {
     return (
     <div>
-         <nav >
-        <Link to='/'><img className='logo' src={require('./images/havenHOME.png')} /></Link>
+         <nav>
+        <Link to='/'><img className='logo' src={require('./images/havenBanner2.png')} /></Link>
           <div className="header-wrap">
           <div className= "list-inline">
             <a href="/" className="logoWidth">
@@ -29,8 +29,8 @@ var Navbar = React.createClass({
         <div className="navlist">
            <div className="">
             <ul className="ulLink"> 
-              <li className="linetext"><Link to="/volunteer-login">Login Host</Link></li> 
-              <li className="linetext"><Link to="/guest-login">Login Guest</Link></li>
+              <li className="linetext"><Link to="/volunteer-login">Host Log-In</Link></li> 
+              <li className="linetext"><Link to="/guest-login">Guest Log-In</Link></li>
             </ul>
             </div>
         </div>

@@ -4,8 +4,8 @@ body{
 	font-size: 25px;
 	padding-top: 50px;
     padding-right: 20px;
-    padding-bottom: 300px;
-    padding-left: 20px;
+    padding-bottom: 200px;
+    padding-left: 30px;
 }
 
 
@@ -16,28 +16,34 @@ body{
 }
 
 .oneList {
-	margin-left: 25px;
-  float: left;
+   margin-left: 25px;
+   float: left;
 }
 
 
 .logo {
-	height: 100px;
-	margin-left: 20px;
-	margin-bottom: 20px;
-	margin-top: 20px;
+	margin-left: 2px;
 	font-family: 'Helvetica';
-	font-weight: bold
+	font-weight: bold;
+	margin-top: 0;
+    text-align: center;
+    width: 1080px;
+    height: 400px;
+   
 }
 
 
 .header-wrap{
-	height: 70px;
+	height: 20px;
 	position: absolute;
 	width: 100%;
 	margin-bottom:0;
 	text-decoration: none;
+    width: 1080px;
+    margin: 0 auto; 
+    border-bottom: 7px solid #262626;
 }
+
 
 .list-inline{
 	margin-left: -5px;
@@ -48,6 +54,7 @@ body{
 }
 
 .ulLink{
+   text-align: right;
    list-style-type: none;
    text-decoration: none;
    display: flex;
@@ -58,9 +65,97 @@ body{
    justify-content: space-between;
 }
 
+/*******************************************/
 
-/*   border: 1px solid;
-*/
+.text-picture {
+  display:inline-flex;
+  display: flex;
+  flex: 1;
+  text-align: left;
+  align-self: center;
+  background-color: #72b6b9;
+  width: 1070px;
+  height: 450px;
+  }
+
+.first-feature{
+	padding-top: 4%;
+    padding-bottom: 2%;
+	-webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 2;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    width: 650px;
+    height: 275px;
+}
+
+
+.center-word{
+	text-align: center;
+	align-self: center;
+}
+
+.firstH{
+	display: flex;
+  flex: 1;
+    text-align: left;
+	align-self: center;
+}
+
+
+
+
+.betweenFirstHow{
+ border-left: 7px solid #262626;
+ margin-left: -2px;
+}
+/*  .how{
+  	display: flex;
+  	flex: 1;
+  	align-self: center;
+  	text-align: center;
+  	margin-top: 0;
+  }*/
+ /* .text-picture__text {
+    h2 {
+      margin-top: 0;
+    }
+    @media (min-width: $grid-float-breakpoint) {
+      p:last-child {
+          margin-bottom: 0;
+      }
+    }    
+  }  
+  .text-picture__picture {
+    text-align: center;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }   
+}
+
+
+@media (min-width: $grid-float-breakpoint) {
+  .row--flex {
+    display: flex;
+    .row--flex__col {
+      align-self: flex-start;
+    }
+    .row--flex__col--center {
+      align-self: center;
+    }
+    .row--flex__col--bottom {
+      align-self: flex-end;
+    }
+  }
+}*/
+
 
 
 
