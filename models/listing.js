@@ -6,6 +6,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [200, 2000]
     },
+    zipCode: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [0, 5]
+    },
     images: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false

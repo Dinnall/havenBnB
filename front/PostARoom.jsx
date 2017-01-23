@@ -6,7 +6,8 @@ import {Link} from 'react-router';
 const PostARoom = React.createClass({
 	getInitialState(){
 		return {
-		  description: '',
+      description: '',
+		  zipCode: '',
 		  images: '',	  
 		  guestLimit: '',	  
 		  availability: ''
@@ -21,7 +22,8 @@ const PostARoom = React.createClass({
 		  url:'/api/listing',
 		  type: 'POST',
 		  data: {
-		  	description: this.state.description,
+        description: this.state.description,
+		  	zipCode: this.state.zipCode,
 		  	images: this.state.images,	  
 		  	guestLimit: this.state.guestLimit,	  
 		  	availability: this.state.availability
@@ -37,6 +39,10 @@ const PostARoom = React.createClass({
           <h1>Post a Room</h1>
           <label>Add Description: </label><br/>
           <textarea onChange={this.handleChange.bind(this, 'description')} type="text" name="description"></textarea>
+          <br/><br/>
+
+           <label>Add Zip Code: </label><br/>
+          <textarea onChange={this.handleChange.bind(this, 'zipCode')} type="text" name="zipCode"></textarea>
           <br/><br/>
 
           <label>Add Images: </label><br/>

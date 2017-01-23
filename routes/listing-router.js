@@ -16,6 +16,7 @@ const getListings = (req, res) => {
 const createListing = (req, res) => {
 	Listing.create({
 		description: req.body.description,
+		zipCode: req.body.zipCode,
 		images: [req.body.images],
 		guestLimit: req.body.guestLimit,
 		availability: req.body.availability

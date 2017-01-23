@@ -16,6 +16,9 @@ const AllListings = React.createClass({
 			.done( (data) => {
 				this.setState({places: data})
 			})
+			.catch((error) => {
+				console.log(error);
+			})
 		}
 	},
 	render: function(){
