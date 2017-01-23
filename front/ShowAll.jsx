@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import {Link} from 'react-router';
+import './Index.css';
 
 const AllListings = React.createClass({
 	getInitialState(){
@@ -24,8 +25,8 @@ const AllListings = React.createClass({
 	render: function(){
 				//console.log("CURRENT LISTINGS", this.props)
 			return(
-			<div>
-				<h2>All Available Listings</h2>
+			<div className="pageText">
+				<h2 className="hostContainer">All Available Listings</h2>
 
 				
 					{this.state.places.length=== 0 ? "Loading..." : this.state.places.map((place, idx)=> {
