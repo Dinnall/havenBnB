@@ -52,7 +52,7 @@ const PostARoom = React.createClass({
 			  <h2 className="bassicInfo">BASIC INFORMATION</h2>
 	          <h3>DESCRIBE THE PLACE</h3>
 
-	          <textarea className="textarea1" onChange={this.handleChange.bind(this, 'description')} type="text" name="description" rows="5" class="form-control" name="description_room" id="description_room" placeholder="In a few words describe the room you're offering. Tell us about moving dates, desired arrangements, accommodations, environment, etc."></textarea>
+	          <textarea className="textarea1" onChange={this.handleChange.bind(this, 'description')} type="text" name="description" rows="5" className="form-control" name="description_room" id="description_room" placeholder="In a few words describe the room you're offering. Tell us about moving dates, desired arrangements, accommodations, environment, etc."></textarea>
 	          <br/><br/>
 	          
 

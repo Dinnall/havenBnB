@@ -40,7 +40,7 @@ Listing.sync({force: true})
 	},		
 	{
 	  description: "My place is close to Empire State Building, Korea Town, Macy's, Penn Station, Herold Square, . You’ll love my place because of Walking distance from everything. My place is good for couples, solo adventurers, and business travelers.",
-	  zipCode: '10207',
+	  zipCode: '11207',
 	  images: ['https://a2.muscache.com/im/pictures/b6157654-bc37-4402-b54d-d95ddfa1e034.jpg'],
 	  guestLimit: 2,
 	  availability: 0,
