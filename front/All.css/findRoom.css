@@ -1,0 +1,75 @@
+.CreateAdd-container-main{
+    background-color: #F2F1ED;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 950px;
+}
+
+.banner{
+    width: 950px;
+    height: 300px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 27px;
+
+}
+
+.textarea1{
+    padding: 10px 12px;
+    height: 58px;
+    font-size: 15px;
+    margin: 0 auto;
+    float: none;
+    width: 500px;
+}
+
+.textarea2 {
+    padding: 10px 12px;
+    height: 19px;
+    font-size: 15px;
+    margin: 0 auto;
+    float: center;
+    width: 195px;
+}
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-family: 'Roboto Slab', serif;
+    margin-top: 0;
+    color: #333333
+}
+
+.newListing {
+	margin-top: -137px;
+    color: white;
+}
+.findYour {
+    color: white;
+    margin-top: -20px;
+}
+
+.bassicInfo {
+    margin-top: 29px;
+    color: #D66360;
+}
+
+.guestLimit {
+    color: #D66360;
+}
+
+.btnSubmit {
+	
+	background-color: #D66360; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	margin-bottom: 35px;
+}
+
