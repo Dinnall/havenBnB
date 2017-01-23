@@ -1,3 +1,28 @@
-body {
-	font-family: Arial
+.log {
+  margin-top: 50px;
+	font-family: 'Lobster', cursive;
+}
+
+.loginBox {
+  border: 1px solid black;
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  background-color: white;
+  color: #D66360;
+}
+
+.inputField{
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 16px;
+  padding: 8px;
+  margin: 5px;
+}
+
+.btnStyling{
+
 }

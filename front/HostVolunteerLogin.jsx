@@ -1,42 +1,27 @@
 import React from 'react';
 import {Link,browserHistory} from 'react-router';
 import { withRouter } from 'react-router'
-// import './style/login.css';
-// import {connect} from 'react-redux'; //conect library
-// import * as userActions from './reducers/userActions.js' //import all actions & 
+import './Index.css';
 
- {/*GALLERY COMPONENT & SIDEBAR*/}
+
 var HostVolunteerLogin = React.createClass({
-
 	submitLogin(){
-
-	  //push to home
-		browserHistory.push('/create-post')
-		
-		
+		browserHistory.push('/create-post')	
 	},
   
     render() {
     return (
       <div>
-      	<h3>Host Login</h3>
-
-	        {/*LOGIN FORM*/} 
-		    <div className="log">
-		        <div className="card">
-		            <img id="log" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-					<form >
-					    <input  type="email" placeholder="email"  required/>
-					    <input  type="password" placeholder="password" required/>
-					    <div id="remember" className="checkbox">
-					        <label>
-					            <input type="checkbox"/> Remember me
-					        </label>
-					    </div>
+		    <div className="hostContainer">
+	        <div className="hostForm loginBox">
+            <form>
+          		<div className='hostTitle'>Host Login</div>
+					    <input className="inputField" type="email" placeholder="Email"  required/>
+              <br></br>
+					    <input className="inputField" type="password" placeholder="Password" required/>
+              <br></br>
 					    <input className="btn-success" type="button" onClick={this.submitLogin} value=" Login " />
-					</form>
-
-		            <a href="#"> Forgot the password? </a>
+						</form>
 		        </div>
 		    </div>
 
@@ -46,12 +31,6 @@ var HostVolunteerLogin = React.createClass({
     )
   }
 })
-
-//take obj from store turns into props, access & sets state 
-// const mapStoreToProps = store => (
-//   {user: store.userReducer}
-// )
-// export default connect(null, userActions)(Login); //connects: mapStoreToProps is global state in the props
 
 export default HostVolunteerLogin;
 

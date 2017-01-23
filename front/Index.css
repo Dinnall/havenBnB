@@ -1,0 +1,54 @@
+/*font-family: 'Lobster', cursive;
+font-family: 'Oxygen', sans-serif;
+font-family: 'Noto Serif', serif;*/
+
+/*.hostContainer {
+	font-family: 'Lobster', cursive;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: yellow;
+	height: 100vh;
+}
+
+.hostForm h3{
+	font-family: 'Lobster', cursive;
+}
+
+.hostForm {
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 275px;
+  border: 1px solid green;
+  background-color: red;
+}*/
+
+.hostContainer {
+	margin-top: 50px;
+}
+
+.hostTitle {
+	font-family: 'Lobster', cursive;
+}
+
+.loginBox {
+  border: 1px solid black;
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  background-color: white;
+  color: #D66360;
+}
+
+.inputField{
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 16px;
+  padding: 8px;
+  margin: 5px;
+}

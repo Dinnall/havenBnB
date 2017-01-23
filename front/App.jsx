@@ -11,7 +11,7 @@ import AllListings from './ShowAll';
 import PostARoom from './PostARoom';
 import './App.css';
 import './Main.css';
-
+import './Index.css';
 
 const App = (props) => {
 	return (
