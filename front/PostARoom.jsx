@@ -23,7 +23,7 @@ const PostARoom = React.createClass({
 		this.setState({[inputField] : e.target.value})
 	},
 	submitNewPost(e) {
-		console.log("are u calling")
+		//console.log("are u calling")
 		e.preventDefault()
 		$.ajax({
 		  url:'/api/listing',
@@ -37,26 +37,22 @@ const PostARoom = React.createClass({
 
 		  }
 		})
-		Popup.alert("Thank you for Posting with us! Your Post has been created!");
+		Popup.alert("Thank you for listing! Your Post has been created.");
 	},
 	render(){
 		return(
 		<div className="main">
-			 
-             <img className="banner" src= "https://wallpaperscraft.com/image/new_york_night_skyscrapers_top_view_59532_3840x1200.jpg" />
-             <h1 className="newListing">NEW LISTING</h1>
-			 <h4 className="findYour">Find your ideal roomie</h4>
 
 			<Popup />
 			<form className="CreateAdd-container-main" onSubmit={this.submitNewPost} >
-			  <h2 className="bassicInfo">BASIC INFORMATION</h2>
-	          <h3>DESCRIBE THE PLACE</h3>
+			  <h2 className="bassicInfo">Basic Information</h2>
+	          <h3>Description</h3>
 
 	          <textarea className="textarea1" onChange={this.handleChange.bind(this, 'description')} type="text" name="description" rows="5" className="form-control" name="description_room" id="description_room" placeholder="In a few words describe the room you're offering. Tell us about moving dates, desired arrangements, accommodations, environment, etc."></textarea>
 	          <br/><br/>
 	          
 
-			  <h3 className="guestLimit">Upload some pictures, posts with more than 2 photos get more exposure.</h3>
+			  <h3 className="guestLimit">Upload Image.</h3>
 	          <textarea className="textarea2" onChange={this.handleChange.bind(this, 'images')} type="text" name="images" placeholder="Add image url"></textarea>
 	          <br/><br/>
 	          <h3 className="guestLimit">Add Guest Limit:</h3>

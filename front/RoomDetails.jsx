@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import {withRouter} from 'react-router';
 import Popup from 'react-popup';
+import './Index.css';
 
 const RoomDetails = React.createClass({
   getInitialState(){
@@ -86,8 +87,8 @@ const RoomDetails = React.createClass({
   render(){
     if(this.state.roomInfo){
     return(
-      <div>
-        <div>
+      <div className="pageText">
+        <div className="hostContainer">
           <img src={this.state.roomInfo[0].images[0]} />
           <p>What To Expect: {this.state.roomInfo[0].description}</p>
 

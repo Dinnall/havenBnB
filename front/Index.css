@@ -29,6 +29,10 @@ font-family: 'Noto Serif', serif;*/
 	margin-top: 50px;
 }
 
+.pageText {
+  font-family: 'Oxygen';
+}
+
 .hostTitle {
 	font-family: 'Lobster', cursive;
 }
