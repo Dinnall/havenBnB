@@ -1,7 +1,11 @@
 
 body{
 	background-color: #f2f1ed;
-	font-size: 25px 
+	font-size: 25px;
+	padding-top: 50px;
+    padding-right: 20px;
+    padding-bottom: 300px;
+    padding-left: 20px;
 }
 
 
@@ -26,41 +30,48 @@ body{
 	font-weight: bold
 }
 
-/*********Nav Bar *************/
-.nav navbar-nav{
-  display: flex;
-  justify-content:space-between;
-  border-bottom: 1px solid #efefef;
-  list-style: none;
-  align-items: center;
-  height: 80px;
-  margin: 0;
-  padding-left: 0;
+
+.header-wrap{
+	height: 70px;
+	position: absolute;
+	width: 100%;
+	margin-bottom:0;
+	text-decoration: none;
 }
 
-.nav navbar-nav{
-  text-decoration: none;
+.list-inline{
+	margin-left: -5px;
+	padding-left: 1;
+	text-decoration: none;
+	justify-content: space-between;
+	list-style-type: none;
 }
 
-.nav navbar-nav{
-    color: #262626;
-    margin-left: 200px;
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5em;
+.ulLink{
+   list-style-type: none;
+   text-decoration: none;
+   display: flex;
+   display: -webkit-flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-justify-content: flex-end;
+   justify-content: space-between;
 }
 
-.nav navbar-nav{
-    color: grey;
-    /*margin-right: 200px;*/
-}
 
-.nav navbar-nav{
-    color: grey;
-}
+/*   border: 1px solid;
+*/
 
-.navlist {
-  display: flex;
-  width: 250px;
-  justify-content: space-between;
-  margin-right: 200px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+

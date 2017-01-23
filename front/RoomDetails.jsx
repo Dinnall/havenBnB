@@ -65,7 +65,7 @@ const RoomDetails = React.createClass({
         <div>
           <img src={this.state.roomInfo[0].images[0]} />
           <p>What To Expect: {this.state.roomInfo[0].description}</p>
-          <p>Host: {this.state.roomInfo[0].User.firstName}</p>
+          
           <p>Guests Per Night: {this.state.roomInfo[0].guestLimit}</p>
         </div>
 
