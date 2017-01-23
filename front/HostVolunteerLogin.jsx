@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link,browserHistory} from 'react-router';
 import { withRouter } from 'react-router'
+import './Index.css';
+
 
 var HostVolunteerLogin = React.createClass({
 	submitLogin(){
@@ -11,11 +13,13 @@ var HostVolunteerLogin = React.createClass({
     return (
       <div>
 		    <div className="hostContainer">
-	        <div className="hostForm">
-      		<h3>Host Login</h3>
-						<form>
-					    <input  type="email" placeholder="email"  required/>
-					    <input  type="password" placeholder="password" required/>
+	        <div className="hostForm loginBox">
+            <form>
+          		<h4>Host Login</h4>
+					    <input className="inputField" type="email" placeholder="Email"  required/>
+              <br></br>
+					    <input className="inputField" type="password" placeholder="Password" required/>
+              <br></br>
 					    <input className="btn-success" type="button" onClick={this.submitLogin} value=" Login " />
 						</form>
 		        </div>
