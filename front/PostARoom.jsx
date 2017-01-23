@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
-import {Link} from 'react-router';
+import {Link, withRouter} from 'react-router';
+import Popup from 'react-popup';
 
 
 const PostARoom = React.createClass({
@@ -8,15 +9,20 @@ const PostARoom = React.createClass({
 		return {
 		  description: '',
 		  images: '',	  
-		  guestLimit: '',	  
+		  guestLimit: 1,	  
 		  availability: ''
 		}
+	},
+	componentDidMount() {
+		Popup.addCloseListener(() => this.props.router.push('/'))
 	},
 	handleChange(inputField, e){
 		console.log(e.target.value)
 		this.setState({[inputField] : e.target.value})
 	},
-	submitNewPost() {
+	submitNewPost(e) {
+		console.log("are u calling")
+		e.preventDefault()
 		$.ajax({
 		  url:'/api/listing',
 		  type: 'POST',
@@ -27,56 +33,47 @@ const PostARoom = React.createClass({
 		  	availability: this.state.availability
 
 		  }
-
 		})
+		Popup.alert("Thank you for Posting with us! Your Post has been created!");
 	},
 	render(){
 		return(
-		<form className="CreateAdd-container-main">
+		<div>
+			<Popup />
+			<form className="CreateAdd-container-main" onSubmit={this.submitNewPost} >
+	          <h1>Post a Room</h1>
+	          <label>Add Description: </label><br/>
+	          <textarea onChange={this.handleChange.bind(this, 'description')} type="text" name="description"></textarea>
+	          <br/><br/>
 
-          <h1>Post a Room</h1>
-          <label>Add Description: </label><br/>
-          <textarea onChange={this.handleChange.bind(this, 'description')} type="text" name="description"></textarea>
-          <br/><br/>
+	          <label>Add Images: </label><br/>
+	          <textarea onChange={this.handleChange.bind(this, 'images')} type="text" name="images"></textarea>
+	          <br/><br/>
 
-          <label>Add Images: </label><br/>
-          <textarea onChange={this.handleChange.bind(this, 'images')} type="text" name="images"></textarea>
-          <br/><br/>
-
-          <label>Add Guest Limit: </label> 
-          <select onChange={this.handleChange.bind(this, 'guestLimit')} name="guestLimit">
-			  <option value="1">One</option>
-			  <option value="2">Two</option>
-			  <option value="3">three</option>
-			  <option value="4">Four</option>
-		  </select>
-		  <br/><br/>
+	          <label>Add Guest Limit: </label> 
+	          <select onChange={this.handleChange.bind(this, 'guestLimit')} name="guestLimit">
+				  <option value="1">One</option>
+				  <option value="2">Two</option>
+				  <option value="3">three</option>
+				  <option value="4">Four</option>
+			  </select>
+			  <br/><br/>
 
 
- 		  <label>Add Availability: </label><br/>
-		  <input onChange={this.handleChange.bind(this, 'availability')} type="radio" name="availability" value="TRUE"/> TRUE<br/>
-		  <input onChange={this.handleChange.bind(this, 'availability')} type="radio" name="availability" value="FALSE"/> FALSE<br/><br/>
+	 		  <label>Add Availability: </label><br/>
+			  <input onChange={this.handleChange.bind(this, 'availability')} type="radio" name="availability" value="TRUE"/> TRUE<br/>
+			  <input onChange={this.handleChange.bind(this, 'availability')} type="radio" name="availability" value="FALSE"/> FALSE<br/><br/>
 
-          <Link to="/"><input onClick={this.submitNewPost} type="button" value="Submit" /></Link>
+	          <button>Post</button>
 
-        </form>
+	        </form>
+	      </div>
 			)
 	}
 })
 
-export default PostARoom;
+export default withRouter(PostARoom);
 
-          // <input onChange={this.handleChange.bind(this, 'guestLimit')} type="text" name="guestLimit" placeholder="guestLimit"/>
+         
 
           
-{/*
-          <br/>
-          <label>Add Availability: </label><br/>
-          <input onChange={this.handleChange.bind(this, 'availability')} type="radio" name="TRUE" value="availability"/> True<br/>
-  		  <input onChange={this.handleChange.bind(this, 'availability')} type="radio" name="FALSE" value="availability"/> False<br/>
-  		  <br/>
-
-          <input onChange={this.handleChange.bind(this, 'availability')} type="text" name="availability"/> 
-          <br/>
-          <br/>
-*/}

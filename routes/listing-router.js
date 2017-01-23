@@ -43,6 +43,21 @@ const getOneListing = (req, res) => {
 	})
 }
 
+//UPDATE AVAILIBILITY TRUE TO FALSE 
+const updateAvailibility = (req, res) => {
+	Listing.findOne({ where: { id: req.params.id } })
+	.then((listing) => {
+		listing.updateAttributes({
+			availability: false
+		})
+		.then(() => res.sendStatus(200))
+	})
+	.catch((err) => {
+		console.log("ERROR GETTING ONE LISTNG====>", err)
+		res.sendStatus(500)
+	})
+}
+
 //present url is /api/listing
 listingRouter.route('/')
 	.get(getListings)
@@ -52,5 +67,6 @@ listingRouter.route('/')
 
 listingRouter.route('/:id')
 	.get(getOneListing)
+	.put(updateAvailibility)
 
 module.exports = listingRouter;
