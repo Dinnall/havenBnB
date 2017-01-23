@@ -9,9 +9,8 @@ import GuestLogin from './GuestLogin';
 import RoomDetails from './RoomDetails';
 import AllListings from './ShowAll';
 import PostARoom from './PostARoom';
-import './App.css'
-var Carousel = require('nuka-carousel');
-
+import './App.css';
+import './Main.css';
 
 
 const App = (props) => {
