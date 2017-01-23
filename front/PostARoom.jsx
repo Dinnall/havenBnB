@@ -51,8 +51,11 @@ const PostARoom = React.createClass({
 	          <textarea className="textarea1" onChange={this.handleChange.bind(this, 'description')} type="text" name="description" rows="5" className="form-control" name="description_room" id="description_room" placeholder="In a few words describe the room you're offering. Tell us about moving dates, desired arrangements, accommodations, environment, etc."></textarea>
 	          <br/><br/>
 	          
+	           <h3 className="zipCode">Zip Code</h3>
+	          <textarea className="textarea2" onChange={this.handleChange.bind(this, 'zipCode')} type="text" name="zipCode" placeholder="Zip Code"></textarea>
+	          <br/><br/>
 
-			  <h3 className="guestLimit">Upload Image.</h3>
+			  <h3 className="guestLimit">Upload Image</h3>
 	          <textarea className="textarea2" onChange={this.handleChange.bind(this, 'images')} type="text" name="images" placeholder="Add image url"></textarea>
 	          <br/><br/>
 	          <h3 className="guestLimit">Add Guest Limit:</h3>
